@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11_18_실습</title>
+</head>
+<body>
+    <!-- <script>
+        function add(num1,num2) {
+            return num1 + num2;
+        }
+        function sub(num1, num2) {
+            return num1 - num2;
+        }
+        let a=3,b=4;
+        const result = add(a,b);
+        document.write(a + "+" + b + "=" + result);
+
+        result = sub(a,b);
+        document.write(a + "-" + b + "=" + result);
+    </script> -->
+
+
+    <!-- <script>
+        function 만들기(num){
+            if (num >=1 && num<=3) {
+                document.write("<img src='images/food" + num + ".png'>");
+                return ture;
+            }
+            else{return false;}
+        }
+        let food = parseInt(prompt("햄버거 = 1, 아이스크림 = 2, 감자튀김 = 3"));
+        if(만들기(food)){
+            document.write("음식 나왔습니다. 식사 맛있게하세요<br>")
+        } else {"입력이 잘못되었습니다, 다시 입력해주세요"} 
+    </script> -->
+
+    <h1 id="alter">글자전환입니다</h1>
+    <button onclick="change('red')">red</button>
+    <button onclick="change('blue')">blue</button>
+    <button onclick="change('yellow')">yellow</button>
+    <script>
+        function change(clolr) {
+            const alter = document.getElementById("alter");
+            alter.style.background = clolr;
+        }
+    </script>
+</body>
+</html>
