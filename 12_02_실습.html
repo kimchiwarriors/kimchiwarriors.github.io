@@ -1,0 +1,52 @@
+<head>
+
+</head>
+<body>
+     
+<body> 
+    <input type="checkbox" id="myCheckbox"> 다음 단계 진행 확인!<br> 
+    <input type="button" value="process" onClick="getCheckbox()"><hr> 
+    <p id="result"></p> 
+    <script> 
+      function getCheckbox() { 
+        if (document.getElementById("myCheckbox").checked == true) 
+          document.getElementById("result").innerHTML="작업을 진행하겠습니다."; 
+        else 
+          document.getElementById("result").innerHTML="사용자의 요구로 중단!"; 
+      } 
+    </script> 
+  </body> 
+   
+  <body>
+    <style>
+        #h {
+            margin-left: 20px;
+        }
+    </style>
+
+    <input type="checkbox" name="myAdd" value="1500">추가채소 1500원<br>
+    <details>
+    <summary>추가음료 각 1000원</summary>
+    <input type="checkbox" name="myAdd" value="1000" id="h"> 콜라 <br>
+    <input type="checkbox" name="myAdd" value="1000" id="h"> 사이다 <br>
+    <input type="checkbox" name="myAdd" value="1000" id="h"> 환타 <br>
+    <input type="checkbox" name="myAdd" value="1000" id="h"> 솔의 눈 <br>
+    </details>
+    <input type="checkbox" name="myAdd" value="500">추가피클 500원<br>
+    <input type="checkbox" name="myAdd" value="200">추가케찹 200원<br>
+    <input type="checkbox" name="myAdd" value="200">추가머스타드 200원<br>
+    <input type="button" value="add" onClick="getCheckbox()"><hr> 
+    <p id="result"></p> 
+    <script> 
+      function getCheckbox() { 
+        let sum = 0; 
+        const adds = document.getElementsByName("myAdd"); 
+        for (let i = 0; i < adds.length; i++) { 
+          if (adds[i].checked) 
+            sum = sum + parseInt(adds[i].value);  
+        } 
+        document.getElementById("result").innerHTML = `추가금액: ${sum}원`; 
+      } 
+    </script> 
+  </body> 
+</body>
