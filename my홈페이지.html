@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>대학생활 도우미 사이트</title>
+
+        <style>
+            div{
+                background-color: black;
+            }
+            header{
+                background-color: rgb(255, 255, 127);
+            }
+            section{
+                margin-top: 50px;
+                margin-bottom: 50px;
+                font-size: medium;
+            }
+        </style>
+
+    </head>
+    <body>
+        <script>
+            function sec(a) {
+                document.getElementById("srcion").src = "my홈페이지_"+ a +".html";
+            }
+            function color1(a){
+                a.style.background = "yellow"
+                a.style.color = "black"
+            }
+            function color2(a){
+                a.style.background = "black";
+                a.style.color = "white"
+            }
+        </script>
+        <header>
+            <h3 style="text-align: right;">202401773 문찬웅</h3>
+            <h1 style="text-align: center;">대학생활관리</h1>
+            <h3 style="font-style: oblique;text-align: center;">당신의 대학생활 분석과 앞으로 할 대학생활을 관리해드립니다</h3><hr>
+        </header>
+
+        <nav>
+            <div>
+            <table width="99%" style="color: white; border-collapse: collapse;" border="1">
+                <tr><th onclick="sec(1)" onmouseenter="color1(this)" onmouseleave="color2(this)">성적관리</th>
+                    <th onclick="sec(2)" onmouseenter="color1(this)" onmouseleave="color2(this)">과제관리</th>
+                    <th onclick="sec(3)" onmouseenter="color1(this)" onmouseleave="color2(this)">대외활동</th>
+                    <th onclick="sec(4)" onmouseenter="color1(this)" onmouseleave="color2(this)"> 자격증</th></tr>
+            </table>
+            </div>
+        </nav>
+
+        <iframe src="my홈페이지_aside.html" name="left" width="13%" height="95%"></iframe>
+
+        <iframe src="my홈페이지_1.html" id = "srcion" name="right" width="85%" height="95%"></iframe>
+    </body>
+</html>

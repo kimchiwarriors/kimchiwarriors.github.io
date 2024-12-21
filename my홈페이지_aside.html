@@ -1,0 +1,21 @@
+<aside>
+    <!-- <div style="background-color: gray; border-bottom: 10px black;">
+        <h1 style="text-align: center;">충남대 성적확인 사이트 바로가기</h1>
+    </div> -->
+    <h1 style="text-align: center; background-color: gray;" onclick="window.open('https://portal.cnu.ac.kr/login.jsp')">충남대 성적확인 사이트 바로가기</h1><hr>
+    <img src="my홈페이지_img0.jpg" style="width: 100%; height: 50%;" id="img">
+    <div id="n"></div>
+    <script>
+        const b = Math.floor(Math.random() * 5);
+        let a;
+        document.getElementById("img").src = 'my홈페이지_img'+b+'.jpg'
+        if (b == 1){
+            a = '"꿈을 계속 간직하고 있으면 반드시 실현할 때가 온다"<br>-괴테'
+        } else if (b == 0) {a = '"실패는 잊어라. 하지만 그것에서 얻은 교훈은 절대 잊지 마라<br>-헨리 포드"'}
+        else if(b==2) {a= '"비록 천천히 가더라도 중단하지 않는것이 좋다"<br>-공자'}
+        else if(b==3) {a='"지금이 최악이라고 생각하는 순간 그것이 바로 전환점이다"<br>-찰스 디킨스'}
+        else if(b==4) {a='"인내는 쓰지만 그 열매는 달다"<br>-아리스토텔레스'}
+        document.write('<h3>'+a+'</h3>');
+    </script>
+    
+</aside>

@@ -1,0 +1,14 @@
+<h2>과제 완료일을 입력해주세요> <input type="date" id="day"><input type="button" onclick="ddd()" value="입력"></h2>
+<h1 id="result"></h1>
+<script>
+    function ddd(){
+        const start = new Date();
+        const end = new Date(document.getElementById('day').value);
+        const days = (end-start)/(1000 * 60 * 60 * 24);
+        document.getElementById('result').innerHTML = "과제일이 "+ Math.floor(days) + "일만큼 남았습니다.";
+        if (days<10){
+        alert("과제일이 얼마 남지 않았습니다. 빠르게 완료해주세요.")
+    }
+    }
+    
+</script>

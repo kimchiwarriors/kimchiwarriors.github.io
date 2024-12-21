@@ -1,0 +1,84 @@
+과제제출을 얼마나 했는지 물어보고 평균내어서 성적을 계산해줍니다<br>
+<head>
+    <style>
+        tt{
+            font-size: large;
+        }
+        input{
+            border: 0cap;
+            width: 99%;
+            text-align: center;
+        }
+    </style>
+    <script>
+        let a,b,c,d,e,f;
+        function math(){
+            let st = parseInt(document.getElementById('준과제수').value);
+            let nd = parseInt(document.getElementById('낸과제수').value);
+            let rd = parseInt(document.getElementById('과제반영비율').value);
+
+            let t0 = parseInt(document.getElementById('중간점수').value);
+            let t1 = parseInt(document.getElementById('중간만점').value);
+            let t2 = parseInt(document.getElementById('중간평균').value);
+            let t3 = parseInt(document.getElementById("중간반영비율").value);
+
+            e,f = 0;
+            d = 100 - (rd + t3);
+
+            if (nd/st > 1 || t0/t1 > 1){alert("입력한 값이 최댓값보다 큽니다. 반대로 입력해주세요.")}
+            if (d <= 0){alert("반영비율이 잘못되었습니다. 다시 입력해주세요")}
+            if (st <0 || nd <0 || rd <0 || t0 <0 || t1 <0 || t2 <0 || t3 <0){
+                alert("정상적인 숫자를 입력해주시기 바랍니다")
+            }
+
+            if (st != isNaN && nd != isNaN && rd != isNaN && nd >= 0 && st*rd > 0){
+                a = nd/st * rd;
+                document.getElementById('과제점수').innerHTML = "과제점수 : " + a + "%";
+                e = 1;
+            }else {alert("정상적인 숫자를 입력해주시기 바랍니다")};
+            //---------------------------------------------------------------------------------------------
+            
+            if (t0 != isNaN && t1 != isNaN && t3 != isNaN && t0 >= 0 && t3*t1 > 0){
+                if(t2 != isNaN && t2 > 0){
+                    b = t0/t2 * t3;
+                    document.getElementById('중간').innerHTML = "중간점수 : " + b + "%";
+                } else {
+                    b = t0/t1 * t3;
+                    document.getElementById('중간').innerHTML = "중간점수 : " + b + "%";
+                }
+                f = 1;
+            } else {alert("정상적인 숫자를 입력해주시기 바랍니다")};
+            if(e == f == 1){
+            
+            c = (100-a-b)/d;
+            document.getElementById('hr').innerHTML = "당신이 A+를 위해서 종강까지 맞아야하는 최소점수는 " + c*90 + "점입니다<br>"
+             + "당신이 A를 위해서 종강까지 맞아야하는 최소점수는 " + c*70 + "점입니다<br>"
+             + "당신이 B를 위해서 종강까지 맞아야하는 최소점수는 " + c*40 + "점입니다<br>"
+             + "당신이 C를 위해서 종강까지 맞아야하는 최소점수는 " + c*20 + "점입니다<br>"
+             + "<h3>이것은 예상점수이므로 상황이나 평균에 따라서 변경될수 있습니다. 그러니 포기하지말고 열심히 해주시길 바랍니다<h3>"
+             }
+        }
+    </script>
+</head>
+<body>
+    <table border="2" style="width: 100%; border-collapse: collapse;" >
+        <tr> <th>과목명</th> <th>주신 과제수</th> <th>제출한 과제수</th> <th>과제반영비율</th></tr>
+        <tr> <th><input type="text" id="과목명"></th>
+            <th><input type="text" id="준과제수"></th>
+            <th><input type="text" id="낸과제수"></th>
+            <th><input type="text" id="과제반영비율" style="width: 90%">%</th></tr>
+    </table>
+    <tt id="과제점수">과제점수 : </tt>
+    
+    <!-- 시험점수 -->
+
+    <table border="2" style="width: 100%;border-collapse: collapse;">
+        <tr> <th>만점기준</th> <th>중간고사점수</th> <th>평균점수</th> <th>중간고사 반영비율</th></tr>
+        <tr> <th><input type="text" id="중간만점"></th>
+            <th><input type="text" id="중간점수"></th>
+            <th><input type="text" id="중간평균" value="모르면 적지 않아도 됩니다"></th>
+            <th><input type="text" id="중간반영비율" style="width: 90%">%</th></tr>
+    </table>
+    <tt id="중간">중간점수 : </tt><br>
+    <input type="button" value="계산하기" Onclick="math()"><hr id="hr"> 
+</body>

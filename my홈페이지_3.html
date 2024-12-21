@@ -1,0 +1,24 @@
+<iframe src="" id="www" style="height: 99%; width: 99%;"></iframe>
+<script>
+    action2();
+    function action1() {
+        action2();
+    }
+    function action2(){
+    let 대외활동1 = prompt("대외활동을 얼마나 하셨습니까?");
+    let 대외활동 = parseInt(대외활동1)
+    if (0 <= 대외활동 && 대외활동 < 3){
+        alert("대외활동이 아직 부족합니다. 최소" + (3 - 대외활동) +"만큼 해주십시요")
+        document.getElementById("www").src = "https://linkareer.com/";
+    }
+    else if (3<=대외활동 && 대외활동<=5){
+        alert("적당히 대외활동을 하셨습니다. 이제 다른활동에 집중하셔도 됩니다.")
+        document.getElementById("www").src = "my홈페이지_4.html";
+    }
+    else if (5<대외활동){
+        alert(대외활동 + "번은 너무 많습니다. 이제 다른활동에 집중하시는게 좋을것 같습니다.")
+        document.getElementById("www").src = "my홈페이지_4.html";
+    }else{alert("올바른 입력을 해주십시요")
+    action1(); }
+}
+</script>
